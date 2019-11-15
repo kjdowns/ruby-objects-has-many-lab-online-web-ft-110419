@@ -19,4 +19,9 @@ class Author
     new_post = add_post(Post.new(title))
   end
   
+  def self.post_count
+    posts_with_author = Post.all.select {|posts| posts.author}
+    posts_with_author.count
+  end
+  
 end
